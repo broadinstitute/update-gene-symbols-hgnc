@@ -4,7 +4,7 @@
 
 ## Install
 
-`pip install update_gene_symbols`
+`pip install update_gene_symbols_hgnc`
 
 ## How to use
 

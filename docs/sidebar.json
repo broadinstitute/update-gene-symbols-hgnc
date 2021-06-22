@@ -1,5 +1,5 @@
 {
-  "update_gene_symbols": {
+  "update_gene_symbols_hgnc": {
     "Overview": "/",
     "core": "core.html"
   }

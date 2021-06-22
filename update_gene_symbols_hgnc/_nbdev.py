@@ -7,8 +7,8 @@ index = {"get_official_gene_symbol": "00_core.ipynb",
 
 modules = ["core.py"]
 
-doc_url = "https://gpprnd.github.io/update_gene_symbols/"
+doc_url = "https://gpprnd.github.io/update_gene_symbols_hgnc/"
 
-git_url = "https://github.com/gpprnd/update_gene_symbols/tree/master/"
+git_url = "https://github.com/gpprnd/update_gene_symbols_hgnc/tree/master/"
 
 def custom_doc_links(name): return None
