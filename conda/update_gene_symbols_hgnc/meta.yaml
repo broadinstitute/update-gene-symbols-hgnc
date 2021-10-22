@@ -1,0 +1,34 @@
+package:
+  name: update_gene_symbols_hgnc
+  version: 0.0.1
+source:
+  sha256: 3c1f29655e997563af80d5efa977fbf3565a778fcfaf221669412276548a565e
+  url: https://files.pythonhosted.org/packages/8b/e7/0cdbd03c265b7ad8d789b55f0f93739ab91a44bb8eb2cef0ae7e46d710bd/update_gene_symbols_hgnc-0.0.1.tar.gz
+about:
+  dev_url: https://gpprnd.github.io
+  doc_url: https://gpprnd.github.io
+  home: https://gpprnd.github.io
+  license: Apache Software
+  license_family: APACHE
+  summary: Python package to get official HGNC gene symbols
+build:
+  noarch: python
+  number: '0'
+  script: '{{ PYTHON }} -m pip install . -vv'
+extra:
+  recipe-maintainers:
+  - gpprnd
+requirements:
+  host:
+  - pip
+  - python
+  - packaging
+  - requests>=2.25.1
+  run:
+  - pip
+  - python
+  - packaging
+  - requests>=2.25.1
+test:
+  imports:
+  - update_gene_symbols_hgnc
