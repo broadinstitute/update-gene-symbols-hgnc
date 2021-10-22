@@ -13,6 +13,6 @@ entries:
       title: core
       url: core.html
     output: web
-    title: update_gene_symbols_hgnc
+    title: update_gs_hgnc
   output: web
   title: Sidebar

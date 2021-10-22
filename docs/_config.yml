@@ -63,4 +63,4 @@ plugins:
     - jekyll-remote-theme
 
 remote_theme: fastai/nbdev-jekyll-theme
-baseurl: /update_gene_symbols_hgnc/
+baseurl: /update_gs_hgnc/
