@@ -11,7 +11,9 @@
 Use this package to get the official gene symbol as follows:
 
 ```
-off_gs = get_official_gene_symbol('VARS')
+from update_gene_symbols_hgnc import core as update_gs
+
+off_gs = update_gs.get_official_gene_symbol('VARS')
 off_gs
 ```
 
