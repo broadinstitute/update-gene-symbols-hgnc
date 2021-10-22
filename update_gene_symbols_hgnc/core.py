@@ -10,19 +10,22 @@ def get_official_gene_symbol(gs):
     :param gs: str, gene symbol
     :return: off_gs, official HGNC gene symbol
     """
-    gene_id = get_gene_id(gs)
-    if gene_id != '':
-        server = "https://rest.ensembl.org/"
-        ext = 'xrefs/id/'+gene_id+'?all_levels=1;external_db=HGNC'
-        r = requests.get(server+ext, headers={ "Content-Type" : "application/json"})
-        if not r.ok:
-            r.raise_for_status()
-            sys.exit("Gene not found")
-        gene_info = r.json()
-        off_gs = gene_info[0]['display_id']
-        return off_gs
+    gene_id_info = get_gene_id(gs)
+    new_symbol = ''
+    if len(gene_id_info)>0:
+        for g in gene_id_info:
+            server = "https://rest.ensembl.org/"
+            ext = 'xrefs/id/'+g['id']+'?external_db=HGNC;all_levels=1;'
+            r = requests.get(server+ext, headers={ "Content-Type" : "application/json"})
+            id_info = r.json()
+            if id_info[0]['display_id'] == gs:
+                new_symbol = gs
+                break
+            else:
+                new_symbol = id_info[0]['display_id']
+        return new_symbol
     else:
-        print('Gene not found')
+        return 'Gene not found'
 
 def get_gene_id(gs):
     """Get Ensembl gene ID of symbol
@@ -35,9 +38,5 @@ def get_gene_id(gs):
     if not r.ok:
         r.raise_for_status()
         sys.exit("Gene not found")
-    gene_info = r.json()
-    if len(gene_info)>0:
-        gene_id = gene_info[0]['id']
-        return gene_id
-    else:
-        return ''
+    gene_id_info = r.json()
+    return gene_id_info
