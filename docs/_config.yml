@@ -1,7 +1,7 @@
-repository: gpprnd/update-gene-symbols
+repository: broadinstitute/update-gene-symbols-hgnc
 output: web
-topnav_title: update-gene-symbols
-site_title: update-gene-symbols
+topnav_title: update-gene-symbols-hgnc
+site_title: update-gene-symbols-hgnc
 company_name: Mudra Hegde
 description: Update gene symbols to official HGNC gene symbols.
 # Set to false to disable KaTeX math
